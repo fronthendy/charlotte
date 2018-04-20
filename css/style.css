@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900|Montserrat:300,400,500,600,700,800,900");
+html, body {
+  margin: 0;
+  padding: 0; }
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 30px 0; }
+    header nav ul li {
+      display: inline-block;
+      padding: 20px 10px; }
+      header nav ul li a {
+        font: 400 15px 'Heebo', sans-serif;
+        color: #fff;
+        text-decoration: none;
+        position: relative; }
+        header nav ul li a:after {
+          content: '';
+          width: 0;
+          height: 1px;
+          background: #fff;
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          -webkit-transition: all 0.3s;
+          /* Safari */
+          transition: all 0.3s; }
+        header nav ul li a:hover {
+          color: #fff;
+          text-decoration: none; }
+          header nav ul li a:hover:after {
+            width: 100%;
+            -webkit-transition: all 0.3s;
+            /* Safari */
+            transition: all 0.3s; }
+
+main {
+  min-height: 100vh; }
+  main section.hero {
+    background-image: url("../img/hero.jpg");
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0 150px;
+    min-height: 100vh; }
+    main section.hero .title {
+      color: #fff; }
+      main section.hero .title svg {
+        width: 50px;
+        fill: #fff; }
+      main section.hero .title p.sub-title {
+        font: 600 22px 'Montserrat', sans-serif;
+        letter-spacing: 3px;
+        margin: 20px 0 10px;
+        color: #fff;
+        text-transform: uppercase; }
+      main section.hero .title h1 {
+        position: relative;
+        font: 600 72px 'Montserrat', sans-serif;
+        display: inline-block;
+        padding: 25px 35px;
+        letter-spacing: 7px;
+        margin: 0;
+        color: #fff;
+        text-transform: uppercase; }
+        main section.hero .title h1:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 0;
+          background-color: #fff;
+          height: 2px; }
+        main section.hero .title h1:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 0;
+          background-color: #fff;
+          height: 2px; }
+        main section.hero .title h1.ready:before, main section.hero .title h1.ready:after {
+          width: 100%;
+          -webkit-transition: all 0.4s;
+          /* Safari */
+          transition: all 0.4s; }
+
+.box-white {
+  width: 830px;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 60px 100px;
+  margin: -150px auto 200px;
+  float: none;
+  box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000; }
+  .box-white .form-search-hotel {
+    margin: 50px 0; }
+    .box-white .form-search-hotel label {
+      font: 400 22px 'Heebo', sans-serif;
+      color: #555555;
+      display: block; }
+    .box-white .form-search-hotel input {
+      font: 400 16px 'Heebo', sans-serif;
+      color: #b5b5b5;
+      border: none;
+      margin-bottom: 40px; }
+      .box-white .form-search-hotel input::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #b5b5b5; }
+      .box-white .form-search-hotel input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #b5b5b5; }
+      .box-white .form-search-hotel input:-ms-input-placeholder {
+        /* IE 10+ */
+        color: #b5b5b5; }
+      .box-white .form-search-hotel input:-moz-placeholder {
+        /* Firefox 18- */
+        color: #b5b5b5; }
+      .box-white .form-search-hotel input:focus {
+        border: none;
+        outline: none;
+        box-shadow: none; }
+    .box-white .form-search-hotel button {
+      background-color: #fff;
+      border-radius: 50px;
+      color: #f98100;
+      border: 2px solid #f98100;
+      font: 700 15px 'Heebo', sans-serif;
+      padding: 10px 40px;
+      max-width: 100%;
+      -webkit-transition: all 0.3s;
+      /* Safari */
+      transition: all 0.3s; }
+      .box-white .form-search-hotel button.ready {
+        background-color: #f98100;
+        color: #fff; }
+    .box-white .form-search-hotel #date-range-container {
+      width: 100%;
+      border: none;
+      background: none; }
+      .box-white .form-search-hotel #date-range-container .date-picker-wrapper {
+        border: none;
+        background: none;
+        padding: 0; }
+        .box-white .form-search-hotel #date-range-container .date-picker-wrapper .caption {
+          height: 60px; }
+          .box-white .form-search-hotel #date-range-container .date-picker-wrapper .caption .next:hover, .box-white .form-search-hotel #date-range-container .date-picker-wrapper .caption .prev:hover {
+            background: transparent;
+            color: #79bd1a; }
+        .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper {
+          border: none; }
+          .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table {
+            width: 100%;
+            float: none;
+            margin: 0 auto;
+            border-top: 2px solid #e3e3e3; }
+            .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table th {
+              font: 400 15px 'Heebo', sans-serif;
+              color: #b5b5b5; }
+            .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .week-name {
+              border-bottom: 2px solid #e3e3e3;
+              height: 30px; }
+            .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .month-name {
+              font: 400 16px 'Heebo', sans-serif;
+              color: #555; }
+            .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .day {
+              font: 400 15px 'Heebo', sans-serif;
+              color: #555;
+              padding: 12px 0;
+              min-width: 45px;
+              box-sizing: content-box; }
+              .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .day.checked, .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .day.hovering {
+                background-color: #79bd1a;
+                color: #fff; }
+            .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .first-date-selected {
+              background-color: #79bd1a !important;
+              border-radius: 50% 0 0 50%; }
+            .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .last-date-selected {
+              border: 2px solid #79bd1a !important;
+              background-color: #fff !important;
+              color: #79bd1a !important;
+              border-radius: 50%; }
+              .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .last-date-selected:parent {
+                background-color: green;
+                border-radius: 0 50% 50% 0; }
+            .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .real-today {
+              background-color: none; }
+  .box-white h2 {
+    font: 400 22px 'Montserrat', sans-serif;
+    color: #000;
+    text-align: center; }
+
+footer {
+  text-align: center;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+  font: 400 12px 'Heebo', sans-serif;
+  color: #b5b5b5; }
+  footer .social-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    footer .social-links ul li {
+      display: inline-block; }
+      footer .social-links ul li svg {
+        width: 30px;
+        margin: 40px 20px; }
+        footer .social-links ul li svg path, footer .social-links ul li svg circle {
+          fill: #F98100;
+          -webkit-transition: all 0.3s;
+          /* Safari */
+          transition: all 0.3s; }
+        footer .social-links ul li svg:hover path, footer .social-links ul li svg:hover circle {
+          fill: #555;
+          -webkit-transition: all 0.3s;
+          /* Safari */
+          transition: all 0.3s; }
+  footer p {
+    margin: 0 0 40px; }
+
+/* FOCO NO TRABALHO DONA HENDY.*/
