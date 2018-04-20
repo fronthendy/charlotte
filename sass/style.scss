@@ -222,15 +222,10 @@ main{
                 background-color: #fff !important;
                 color: #79bd1a !important;
                 border-radius: 50%;
-                &:parent{
-                  background-color: green;
-                  border-radius: 0 50% 50% 0;
-                }
               }
               .real-today{
-                background-color: none;
+                background-color: #fff;
               }
-
           }
         }
       }

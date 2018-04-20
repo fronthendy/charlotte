@@ -187,11 +187,8 @@ main {
               background-color: #fff !important;
               color: #79bd1a !important;
               border-radius: 50%; }
-              .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .last-date-selected:parent {
-                background-color: green;
-                border-radius: 0 50% 50% 0; }
             .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .real-today {
-              background-color: none; }
+              background-color: #fff; }
   .box-white h2 {
     font: 400 22px 'Montserrat', sans-serif;
     color: #000;
