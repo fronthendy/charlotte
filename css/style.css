@@ -47,11 +47,11 @@ main {
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
-    padding: 100px 0 150px;
+    padding: 100px 0 50px;
     min-height: 100vh; }
     main section.hero .title {
       color: #fff; }
-      main section.hero .title svg {
+      main section.hero .title img.svg {
         width: 50px;
         fill: #fff; }
       main section.hero .title p.sub-title {
@@ -90,23 +90,98 @@ main {
           -webkit-transition: all 0.4s;
           /* Safari */
           transition: all 0.4s; }
+  main section.result h2 {
+    font: 22px 'Montserrat', sans-serif;
+    color: #000;
+    margin-bottom: 30px; }
+  main section.result form {
+    margin: 30px 0; }
+    main section.result form legend {
+      font: 22px 'Montserrat', sans-serif;
+      color: #000;
+      border: none;
+      margin: 5px; }
+    main section.result form label {
+      font: 400 13px 'Heebo', sans-serif;
+      color: #b5b5b5;
+      margin: 5px; }
+    main section.result form input.range-price {
+      width: 100%;
+      border: none;
+      background: none;
+      font: 600 22px 'Heebo', sans-serif;
+      color: #f98100; }
+    main section.result form label.filter-stars {
+      display: block;
+      position: relative;
+      padding-left: 25px; }
+      main section.result form label.filter-stars input[type='checkbox'] {
+        display: none; }
+      main section.result form label.filter-stars input[type='checkbox']:checked ~ .checkmark {
+        position: absolute;
+        width: 7px;
+        height: 11px;
+        border-right: 3px solid #f98100;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(40deg);
+        top: 4px;
+        left: 6px;
+        border-radius: 2px;
+        border-bottom: 3px solid #f98100; }
+      main section.result form label.filter-stars:before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 19px;
+        height: 19px;
+        border: 2px solid #ffbb72;
+        border-radius: 2px; }
+      main section.result form label.filter-stars img {
+        width: 20px;
+        margin: 3px; }
+    main section.result form .ui-state-default, main section.result form .ui-widget-content .ui-state-default, main section.result form .ui-widget-header .ui-state-default {
+      border: 4px solid #f88000;
+      background-color: #fff;
+      background-image: none;
+      border-radius: 50%; }
+      main section.result form .ui-state-default:hover, main section.result form .ui-state-default:active, main section.result form .ui-state-default:focus, main section.result form .ui-widget-content .ui-state-default:hover, main section.result form .ui-widget-content .ui-state-default:active, main section.result form .ui-widget-content .ui-state-default:focus, main section.result form .ui-widget-header .ui-state-default:hover, main section.result form .ui-widget-header .ui-state-default:active, main section.result form .ui-widget-header .ui-state-default:focus {
+        outline: none; }
+      main section.result form .ui-state-default:hover, main section.result form .ui-widget-content .ui-state-default:hover, main section.result form .ui-widget-header .ui-state-default:hover {
+        background-color: #f88000; }
+    main section.result form .ui-slider-horizontal {
+      height: 0.3em;
+      vertical-align: middle;
+      border: none;
+      background-image: none;
+      background-color: #b5b5b5;
+      margin: 10px 0; }
+    main section.result form .ui-slider-horizontal .ui-slider-range {
+      background-image: none;
+      background-color: #f88000;
+      top: 0px;
+      height: 5px; }
+    main section.result form .ui-slider-horizontal .ui-slider-handle {
+      top: -.4em; }
 
 .box-white {
   width: 830px;
   max-width: 100%;
   background-color: #fff;
   border-radius: 5px;
-  padding: 60px 100px;
-  margin: -150px auto 200px;
+  padding: 60px 100px 30px;
+  margin: -150px auto 0;
   float: none;
-  box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000; }
+  box-shadow: -60px -50px 100px -90px #000000, 60px -50px 100px -90px #000000; }
   .box-white .form-search-hotel {
-    margin: 50px 0; }
+    margin: 50px 0 0; }
     .box-white .form-search-hotel label {
       font: 400 22px 'Heebo', sans-serif;
       color: #555555;
       display: block; }
     .box-white .form-search-hotel input {
+      width: 100%;
       font: 400 16px 'Heebo', sans-serif;
       color: #b5b5b5;
       border: none;
@@ -128,6 +203,7 @@ main {
         outline: none;
         box-shadow: none; }
     .box-white .form-search-hotel button {
+      margin-bottom: 50px;
       background-color: #fff;
       border-radius: 50px;
       color: #f98100;
@@ -205,15 +281,15 @@ footer {
     padding: 0; }
     footer .social-links ul li {
       display: inline-block; }
-      footer .social-links ul li svg {
+      footer .social-links ul li img.svg {
         width: 30px;
         margin: 40px 20px; }
-        footer .social-links ul li svg path, footer .social-links ul li svg circle {
+        footer .social-links ul li img.svg path, footer .social-links ul li img.svg circle {
           fill: #F98100;
           -webkit-transition: all 0.3s;
           /* Safari */
           transition: all 0.3s; }
-        footer .social-links ul li svg:hover path, footer .social-links ul li svg:hover circle {
+        footer .social-links ul li img.svg:hover path, footer .social-links ul li img.svg:hover circle {
           fill: #555;
           -webkit-transition: all 0.3s;
           /* Safari */

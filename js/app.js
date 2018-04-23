@@ -1,6 +1,6 @@
 $(function() {
-  $(document).ready(function(){
-      $('.title h1').addClass('ready');
+  $(document).ready(function() {
+    $('.title h1').addClass('ready');
   });
 
   $.dateRangePickerLanguages['custom'] = {
@@ -14,7 +14,7 @@ $(function() {
     'month-name': ['January /', 'February /', 'March /', 'April /', 'May /', 'June /', 'July /', 'August /', 'September /', 'October /', 'November /', 'December /'],
   };
 
-  $('input[name="daterange"]').dateRangePicker({
+  $('#date-range-container').dateRangePicker({
     inline: true,
     container: '#date-range-container',
     alwaysOpen: true,
@@ -29,4 +29,17 @@ $(function() {
     }
   });
 
-})
+  $("#slider-range").slider({
+    range: true,
+    min: 100,
+    max: 600,
+    values: [100, 600],
+    slide: function(event, ui) {
+      $("#range-price-min").val("$" + ui.values[0]);
+      $("#range-price-max").val("$" + ui.values[1]);
+    }
+  });
+
+  $("#range-price-min").val("$" + $("#slider-range").slider("values", 0));
+    $("#range-price-max").val("$" + $("#slider-range").slider("values", 1));
+});
