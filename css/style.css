@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900|Montserrat:300,400,500,600,700,800,900");
-html, body {
+body,
+html {
   margin: 0;
   padding: 0; }
 
@@ -85,7 +86,7 @@ main {
           width: 0;
           background-color: #fff;
           height: 2px; }
-        main section.hero .title h1.ready:before, main section.hero .title h1.ready:after {
+        main section.hero .title h1.ready:after, main section.hero .title h1.ready:before {
           width: 100%;
           -webkit-transition: all 0.4s;
           /* Safari */
@@ -101,7 +102,8 @@ main {
       color: #000;
       border: none;
       margin: 5px; }
-    main section.result form label {
+    main section.result form label,
+    main section.result form span {
       font: 400 13px 'Heebo', sans-serif;
       color: #b5b5b5;
       margin: 5px; }
@@ -118,6 +120,10 @@ main {
       main section.result form label.filter-stars input[type='checkbox'] {
         display: none; }
       main section.result form label.filter-stars input[type='checkbox']:checked ~ .checkmark {
+        opacity: 1;
+        transition: 0.1s ease; }
+      main section.result form label.filter-stars .checkmark {
+        opacity: 0;
         position: absolute;
         width: 7px;
         height: 11px;
@@ -125,8 +131,8 @@ main {
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(40deg);
-        top: 4px;
-        left: 6px;
+        top: 0;
+        left: 1px;
         border-radius: 2px;
         border-bottom: 3px solid #f98100; }
       main section.result form label.filter-stars:before {
@@ -141,14 +147,30 @@ main {
       main section.result form label.filter-stars img {
         width: 20px;
         margin: 3px; }
-    main section.result form .ui-state-default, main section.result form .ui-widget-content .ui-state-default, main section.result form .ui-widget-header .ui-state-default {
+    main section.result form .input-group {
+      width: 100%;
+      border-bottom: 1px solid #e3e3e3;
+      padding: 30px 0; }
+      main section.result form .input-group:last-child {
+        border: none; }
+    main section.result form .ui-state-default,
+    main section.result form .ui-widget-content .ui-state-default,
+    main section.result form .ui-widget-header .ui-state-default {
       border: 4px solid #f88000;
       background-color: #fff;
       background-image: none;
       border-radius: 50%; }
-      main section.result form .ui-state-default:hover, main section.result form .ui-state-default:active, main section.result form .ui-state-default:focus, main section.result form .ui-widget-content .ui-state-default:hover, main section.result form .ui-widget-content .ui-state-default:active, main section.result form .ui-widget-content .ui-state-default:focus, main section.result form .ui-widget-header .ui-state-default:hover, main section.result form .ui-widget-header .ui-state-default:active, main section.result form .ui-widget-header .ui-state-default:focus {
+      main section.result form .ui-state-default:active, main section.result form .ui-state-default:focus, main section.result form .ui-state-default:hover,
+      main section.result form .ui-widget-content .ui-state-default:active,
+      main section.result form .ui-widget-content .ui-state-default:focus,
+      main section.result form .ui-widget-content .ui-state-default:hover,
+      main section.result form .ui-widget-header .ui-state-default:active,
+      main section.result form .ui-widget-header .ui-state-default:focus,
+      main section.result form .ui-widget-header .ui-state-default:hover {
         outline: none; }
-      main section.result form .ui-state-default:hover, main section.result form .ui-widget-content .ui-state-default:hover, main section.result form .ui-widget-header .ui-state-default:hover {
+      main section.result form .ui-state-default:hover,
+      main section.result form .ui-widget-content .ui-state-default:hover,
+      main section.result form .ui-widget-header .ui-state-default:hover {
         background-color: #f88000; }
     main section.result form .ui-slider-horizontal {
       height: 0.3em;
@@ -160,10 +182,68 @@ main {
     main section.result form .ui-slider-horizontal .ui-slider-range {
       background-image: none;
       background-color: #f88000;
-      top: 0px;
+      top: 0;
       height: 5px; }
     main section.result form .ui-slider-horizontal .ui-slider-handle {
       top: -.4em; }
+  main section.result .list-result .box-item {
+    margin-bottom: 60px;
+    padding: 40px 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.2); }
+    main section.result .list-result .box-item .wrapper-img {
+      min-width: 100%;
+      width: 230px;
+      border-radius: 5px;
+      box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.2);
+      float: right;
+      transition: transform .3s,-webkit-transform .3s; }
+      main section.result .list-result .box-item .wrapper-img img {
+        width: 100%; }
+      main section.result .list-result .box-item .wrapper-img:hover {
+        transform: scale(1.05); }
+    main section.result .list-result .box-item .stars img {
+      width: 12px;
+      display: inline-block; }
+    main section.result .list-result .box-item .hotel-name {
+      line-height: 21px; }
+      main section.result .list-result .box-item .hotel-name a {
+        font: 600 16px 'Heebo', sans-serif;
+        color: #f98100;
+        text-transform: uppercase;
+        text-decoration: none; }
+    main section.result .list-result .box-item .description {
+      font: 400 15px 'Heebo', sans-serif;
+      color: #b5b5b5; }
+    main section.result .list-result .box-item .title-sale {
+      font: 300 16px 'Heebo', sans-serif;
+      color: #b2b0c0;
+      margin-bottom: 5px; }
+    main section.result .list-result .box-item .value-sale {
+      font: 700 30px 'Montserrat', sans-serif;
+      color: #79bd1a;
+      margin-bottom: 20px; }
+    main section.result .list-result .box-item .title-normal {
+      font: 300 14px 'Heebo', sans-serif;
+      color: #b2b0c0;
+      margin-bottom: 5px; }
+    main section.result .list-result .box-item .value-normal {
+      font: 700 20px 'Montserrat', sans-serif;
+      color: #f98100;
+      margin-bottom: 20px; }
+    main section.result .list-result .box-item button {
+      margin: 15px 20px 10px 0; }
+    main section.result .list-result .box-item .button-default {
+      border: 1px solid #f98100;
+      padding: 5px 30px; }
+    main section.result .list-result .box-item .button-primary {
+      border-width: 1px;
+      padding: 5px 30px; }
+    main section.result .list-result .box-item .border-right {
+      border-right: 1px solid #ccc; }
+    main section.result .list-result .box-item .values {
+      padding: 40px 0; }
 
 .box-white {
   width: 830px;
@@ -203,20 +283,7 @@ main {
         outline: none;
         box-shadow: none; }
     .box-white .form-search-hotel button {
-      margin-bottom: 50px;
-      background-color: #fff;
-      border-radius: 50px;
-      color: #f98100;
-      border: 2px solid #f98100;
-      font: 700 15px 'Heebo', sans-serif;
-      padding: 10px 40px;
-      max-width: 100%;
-      -webkit-transition: all 0.3s;
-      /* Safari */
-      transition: all 0.3s; }
-      .box-white .form-search-hotel button.ready {
-        background-color: #f98100;
-        color: #fff; }
+      margin-bottom: 50px; }
     .box-white .form-search-hotel #date-range-container {
       width: 100%;
       border: none;
@@ -227,7 +294,8 @@ main {
         padding: 0; }
         .box-white .form-search-hotel #date-range-container .date-picker-wrapper .caption {
           height: 60px; }
-          .box-white .form-search-hotel #date-range-container .date-picker-wrapper .caption .next:hover, .box-white .form-search-hotel #date-range-container .date-picker-wrapper .caption .prev:hover {
+          .box-white .form-search-hotel #date-range-container .date-picker-wrapper .caption .next:hover,
+          .box-white .form-search-hotel #date-range-container .date-picker-wrapper .caption .prev:hover {
             background: transparent;
             color: #79bd1a; }
         .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper {
@@ -271,8 +339,9 @@ main {
     text-align: center; }
 
 footer {
+  margin-top: 30px;
   text-align: center;
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
   font: 400 12px 'Heebo', sans-serif;
   color: #b5b5b5; }
   footer .social-links ul {
@@ -284,17 +353,50 @@ footer {
       footer .social-links ul li img.svg {
         width: 30px;
         margin: 40px 20px; }
-        footer .social-links ul li img.svg path, footer .social-links ul li img.svg circle {
+        footer .social-links ul li img.svg circle,
+        footer .social-links ul li img.svg path {
           fill: #F98100;
           -webkit-transition: all 0.3s;
           /* Safari */
           transition: all 0.3s; }
-        footer .social-links ul li img.svg:hover path, footer .social-links ul li img.svg:hover circle {
+        footer .social-links ul li img.svg:hover circle,
+        footer .social-links ul li img.svg:hover path {
           fill: #555;
           -webkit-transition: all 0.3s;
           /* Safari */
           transition: all 0.3s; }
   footer p {
     margin: 0 0 40px; }
+
+/* geral */
+.button-default {
+  background-color: #fff;
+  border-radius: 50px;
+  color: #f98100;
+  border: 2px solid #f98100;
+  font: 700 15px 'Heebo', sans-serif;
+  padding: 10px 40px;
+  max-width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .button-default:hover {
+    background-color: #f98100;
+    color: #fff;
+    outline: none; }
+
+.button-primary {
+  background-color: #79bd1a;
+  border-radius: 50px;
+  color: #fff;
+  border: 2px solid #79bd1a;
+  font: 700 15px 'Heebo', sans-serif;
+  padding: 10px 40px;
+  max-width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .button-primary:hover {
+    background-color: #fff;
+    color: #79bd1a;
+    outline: none; }
 
 /* FOCO NO TRABALHO DONA HENDY.*/

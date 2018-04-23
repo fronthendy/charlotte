@@ -45,7 +45,7 @@
               <input type="text" name="date-checkin" id="date-checkin" placeholder="Choose a date">
               <label for="date-checkout">CHECK-OUT</label>
               <input type="text" name="date-checkout" id="date-checkout" placeholder="Choose a date">
-              <button>Search hotels</button>
+              <button class="button-primary">Search hotels</button>
             </div>
             <div class="col-md-6">
               <div id="date-range-container"></div>
@@ -59,73 +59,111 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center">
-            <h2>Best choices between {date start} and {date end}</h2>
+            <h2>Best choices between <span class="date-start"></span> and <span class="date-end"></span></h2>
           </div>
-          <div class="col-md-3">
-            <form action="" id="search-filter">
+          <div class="col-md-3 col-xs-12">
+            <form id="search-filter">
                 <fieldset>
                   <legend>Filters</legend>
-                  <label for="range-price">Price Range per <b>night</b></label>
-                  <div class="col-xs-12">
-                    <div id="slider-range"></div>
+                  <div class="input-group">
+                    <label>Price Range per <b>night</b></label>
+                    <div class="col-xs-12">
+                      <div id="slider-range"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-6 text-left">
+                        <label class="pull-left">Min</label>
+                        <input type="text" id="range-price-min" class="range-price pull-left text-left" name="range-price-min" disabled>
+                      </div>
+                      <div class="col-xs-6 text-right">
+                        <label class="pull-right">Max</label>
+                        <input type="text" id="range-price-max" class="range-price pull-right text-right" name="range-price-max" disabled>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-6 text-left">
-                    <span class="pull-left">Min</span>
-                    <input type="text" id="range-price-min" class="range-price pull-left text-left" class="range-price" name="range-price-min" disabled>
+                  <div class="input-group">
+                    <label>Stars</label>
+                    <label for="stars-1" class="filter-stars">
+                      <input type="checkbox" name="stars" id="stars-1">
+                      <span class="checkmark"></span>
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                    </label>
+                    <label for="stars-2" class="filter-stars">
+                      <input type="checkbox" name="stars" id="stars-2">
+                      <span class="checkmark"></span>
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                    </label>
+                    <label for="stars-3" class="filter-stars">
+                      <input type="checkbox" name="stars" id="stars-3">
+                      <span class="checkmark"></span>
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                    </label>
+                    <label for="stars-4" class="filter-stars">
+                      <input type="checkbox" name="stars" id="stars-4">
+                      <span class="checkmark"></span>
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-outline.svg" alt="star-outline" />
+                    </label>
+                    <label for="stars-5" class="filter-stars">
+                      <input type="checkbox" name="stars" id="stars-5">
+                      <span class="checkmark"></span>
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                      <img src="img/star-filled.svg" alt="star-filled" />
+                    </label>
                   </div>
-                  <div class="col-xs-6 text-right">
-                    <span class="pull-right">Max</span>
-                    <input type="text" id="range-price-max" class="range-price pull-right text-right" name="range-price-max" disabled>
-                  </div>
-                  <hr>
-                  <label for="stars">Stars</label>
-                  <label for="stars-1" class="filter-stars">
-                    <input type="checkbox" name="stars" id="stars-1">
-                    <span class="checkmark"></span>
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                  </label>
-                  <label for="stars-2" class="filter-stars">
-                    <input type="checkbox" name="stars" id="stars-2">
-                    <span class="checkmark"></span>
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                  </label>
-                  <label for="stars-3" class="filter-stars">
-                    <input type="checkbox" name="stars" id="stars-3">
-                    <span class="checkmark"></span>
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                  </label>
-                  <label for="stars-4" class="filter-stars">
-                    <input type="checkbox" name="stars" id="stars-4">
-                    <span class="checkmark"></span>
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-outline.svg" alt="star-outline" />
-                  </label>
-                  <label for="stars-5" class="filter-stars">
-                    <input type="checkbox" name="stars" id="stars-5">
-                    <span class="checkmark"></span>
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                  </label>
                 </fieldset>
               </form>
+          </div>
+          <div class="col-md-9 col-xs-12">
+            <div class="list-result">
+              <div class="box-item col-md-offset-2">
+                <div class="col-md-2 col-xs-12">
+                  <div class="wrapper-img">
+                    <a href="#">
+                      <img src="img/hotel-example.jpg" alt="Hyatt Place Charlotte Airport/Lake Pointe">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-8 col-xs-12 border-right">
+                  <div class="stars">
+                    <img src="img/star-filled.svg" alt="star-filled" />
+                    <img src="img/star-filled.svg" alt="star-filled" />
+                    <img src="img/star-filled.svg" alt="star-filled" />
+                  </div>
+                  <h1 class="hotel-name"><a href="#">Hyatt Place Charlotte Airport/Lake Pointe</a></h1>
+                  <p class="description">This hotel is located 7 miles from downtown Charlotte and 5 miles from Charlotte Douglas International Airport.</p>
+                  <button class="book-now button-default">Book now</button>
+                  <button class="price-history button-primary">Price history</button>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12 text-right">
+                <div class="values">
+                  <p class="title-sale">Total <b> 8 nights</b></p>
+                  <p class="value-sale">$670</p>
+                  <p class="title-normal">Per night</p>
+                  <p class="value-normal">$670</p>
+                </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

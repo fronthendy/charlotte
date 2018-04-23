@@ -1,30 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900|Montserrat:300,400,500,600,700,800,900');
 
-html, body{
+body,
+html {
   margin: 0;
   padding: 0;
 }
-
 
 header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  nav{
-    ul{
+
+  nav {
+    ul {
       list-style: none;
       margin: 0;
       padding: 30px 0;
-      li{
+
+      li {
         display: inline-block;
         padding: 20px 10px;
-        a{
+
+        a {
           font: 400 15px 'Heebo', sans-serif;
           color: #fff;
           text-decoration: none;
           position: relative;
-          &:after{
+
+          &:after {
             content: '';
             width: 0;
             height: 1px;
@@ -32,15 +36,19 @@ header {
             position: absolute;
             left: 0;
             bottom: -3px;
-            -webkit-transition: all 0.3s; /* Safari */
+            -webkit-transition: all 0.3s;
+            /* Safari */
             transition: all 0.3s;
           }
-          &:hover{
+
+          &:hover {
             color: #fff;
             text-decoration: none;
-            &:after{
+
+            &:after {
               width: 100%;
-              -webkit-transition: all 0.3s; /* Safari */
+              -webkit-transition: all 0.3s;
+              /* Safari */
               transition: all 0.3s;
             }
           }
@@ -50,29 +58,34 @@ header {
   }
 }
 
-main{
+main {
   min-height: 100vh;
-  section.hero{
-    background-image: url('../img/hero.jpg');
+
+  section.hero {
+    background-image: url("../img/hero.jpg");
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
     padding: 100px 0 50px;
     min-height: 100vh;
-    .title{
+
+    .title {
       color: #fff;
-      img.svg{
+
+      img.svg {
         width: 50px;
         fill: #fff;
       }
-      p.sub-title{
+
+      p.sub-title {
         font: 600 22px 'Montserrat', sans-serif;
         letter-spacing: 3px;
         margin: 20px 0 10px;
         color: #fff;
         text-transform: uppercase;
       }
-      h1{
+
+      h1 {
         position: relative;
         font: 600 72px 'Montserrat', sans-serif;
         // border-top: 2px solid #fff;
@@ -83,7 +96,8 @@ main{
         margin: 0;
         color: #fff;
         text-transform: uppercase;
-        &:before{
+
+        &:before {
           content: '';
           position: absolute;
           left: 0;
@@ -92,7 +106,8 @@ main{
           background-color: #fff;
           height: 2px;
         }
-        &:after{
+
+        &:after {
           content: '';
           position: absolute;
           right: 0;
@@ -101,63 +116,82 @@ main{
           background-color: #fff;
           height: 2px;
         }
-        &.ready{
-          &:before,&:after{
+
+        &.ready {
+          &:after,
+          &:before {
             width: 100%;
-            -webkit-transition: all 0.4s; /* Safari */
+            -webkit-transition: all 0.4s;
+            /* Safari */
             transition: all 0.4s;
           }
         }
       }
     }
   }
-  section.result{
-    h2{
+
+  section.result {
+    h2 {
       font: 22px 'Montserrat', sans-serif;
       color: #000;
       margin-bottom: 30px;
     }
-    form{
+
+    form {
       margin: 30px 0;
-      legend{
+
+      legend {
         font: 22px 'Montserrat', sans-serif;
         color: #000;
         border: none;
         margin: 5px;
       }
-      label{
+
+      label,
+      span {
         font: 400 13px 'Heebo', sans-serif;
         color: #b5b5b5;
         margin: 5px;
       }
-      input.range-price{
+
+      input.range-price {
         width: 100%;
         border: none;
         background: none;
         font: 600 22px 'Heebo', sans-serif;
         color: #f98100;
       }
-      label.filter-stars{
+
+      label.filter-stars {
         display: block;
         position: relative;
         padding-left: 25px;
-        input[type='checkbox']{
+
+        input[type='checkbox'] {
           display: none;
         }
-        input[type='checkbox']:checked ~ .checkmark{
-          position: absolute;
-              width: 7px;
-              height: 11px;
-              border-right: 3px solid #f98100;
-              -webkit-transform: rotate(45deg);
-              -ms-transform: rotate(45deg);
-              transform: rotate(40deg);
-              top: 4px;
-              left: 6px;
-              border-radius: 2px;
-              border-bottom: 3px solid #f98100;
+
+        input[type='checkbox']:checked ~ .checkmark {
+          opacity: 1;
+          transition: 0.1s ease;
         }
-        &:before{
+
+        .checkmark {
+          opacity: 0;
+          position: absolute;
+          width: 7px;
+          height: 11px;
+          border-right: 3px solid #f98100;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(40deg);
+          top: 0;
+          left: 1px;
+          border-radius: 2px;
+          border-bottom: 3px solid #f98100;
+        }
+
+        &:before {
           content: '';
           position: absolute;
           top: 2px;
@@ -167,23 +201,42 @@ main{
           border: 2px solid #ffbb72;
           border-radius: 2px;
         }
-        img{
+
+        img {
           width: 20px;
           margin: 3px;
         }
       }
-      .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-          border: 4px solid #f88000;
-          background-color: #fff;
-          background-image: none;
-          border-radius: 50%;
-          &:hover, &:active, &:focus{
-            outline: none;
-          }
-          &:hover{
-            background-color: #f88000;
-          }
+
+      .input-group {
+        width: 100%;
+        border-bottom: 1px solid #e3e3e3;
+        padding: 30px 0;
+
+        &:last-child {
+          border: none;
+        }
       }
+
+      .ui-state-default,
+      .ui-widget-content .ui-state-default,
+      .ui-widget-header .ui-state-default {
+        border: 4px solid #f88000;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 50%;
+
+        &:active,
+        &:focus,
+        &:hover {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: #f88000;
+        }
+      }
+
       .ui-slider-horizontal {
         height: 0.3em;
         vertical-align: middle;
@@ -191,21 +244,103 @@ main{
         background-image: none;
         background-color: #b5b5b5;
         margin: 10px 0;
-    }
-      .ui-slider-horizontal .ui-slider-range{
+      }
+
+      .ui-slider-horizontal .ui-slider-range {
         background-image: none;
         background-color: #f88000;
-        top: 0px;
+        top: 0;
         height: 5px;
       }
-      .ui-slider-horizontal .ui-slider-handle{
-          top: -.4em;
+
+      .ui-slider-horizontal .ui-slider-handle {
+        top: -.4em;
+      }
+    }
+
+    .list-result{
+      .box-item{
+        margin-bottom: 60px;
+        padding: 40px 25px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.2);
+        .wrapper-img{
+          min-width: 100%;
+          width: 230px;
+          border-radius: 5px;
+          box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.2);
+          float: right;
+          img{
+            width: 100%;
+          }
+          transition: transform .3s,-webkit-transform .3s;
+          &:hover{
+            transform: scale(1.05);
+          }
+        }
+        .stars img{
+          width: 12px;
+          display: inline-block;
+        }
+        .hotel-name{
+          line-height: 21px;
+          a{
+            font: 600 16px 'Heebo', sans-serif;
+            color: #f98100;
+            text-transform: uppercase;
+            text-decoration: none;
+          }
+        }
+        .description{
+          font: 400 15px 'Heebo', sans-serif;
+          color: #b5b5b5;
+        }
+        .title-sale{
+          font: 300 16px 'Heebo', sans-serif;
+          color: #b2b0c0;
+          margin-bottom: 5px;
+        }
+        .value-sale{
+          font:700 30px 'Montserrat', sans-serif;
+          color: #79bd1a;
+          margin-bottom: 20px;
+        }
+        .title-normal{
+          font: 300 14px 'Heebo', sans-serif;
+          color: #b2b0c0;
+          margin-bottom: 5px;
+
+        }
+        .value-normal{
+          font: 700 20px 'Montserrat', sans-serif;
+          color: #f98100;
+          margin-bottom: 20px;
+
+        }
+        button{
+          margin: 15px 20px 10px 0;
+        }
+        .button-default {
+            border: 1px solid #f98100;
+            padding: 5px 30px;
+        }
+        .button-primary {
+            border-width: 1px;
+            padding: 5px 30px;
+        }
+        .border-right{
+          border-right: 1px solid #ccc;
+        }
+        .values{
+          padding: 40px 0;
+        }
       }
     }
   }
 }
 
-.box-white{
+.box-white {
   width: 830px;
   max-width: 100%;
   background-color: #fff;
@@ -214,158 +349,222 @@ main{
   margin: -150px auto 0;
   float: none;
   box-shadow: -60px -50px 100px -90px #000000, 60px -50px 100px -90px #000000;
-  .form-search-hotel{
+
+  .form-search-hotel {
     margin: 50px 0 0;
-    label{
+
+    label {
       font: 400 22px 'Heebo', sans-serif;
       color: #555555;
       display: block;
     }
-    input{
+
+    input {
       width: 100%;
       font: 400 16px 'Heebo', sans-serif;
       color: #b5b5b5;
       border: none;
       margin-bottom: 40px;
-      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
         color: #b5b5b5;
       }
-      &::-moz-placeholder { /* Firefox 19+ */
+
+      &::-moz-placeholder {
+        /* Firefox 19+ */
         color: #b5b5b5;
       }
-      &:-ms-input-placeholder { /* IE 10+ */
+
+      &:-ms-input-placeholder {
+        /* IE 10+ */
         color: #b5b5b5;
       }
-      &:-moz-placeholder { /* Firefox 18- */
+
+      &:-moz-placeholder {
+        /* Firefox 18- */
         color: #b5b5b5;
       }
-      &:focus{
+
+      &:focus {
         border: none;
         outline: none;
         box-shadow: none;
       }
     }
-    button{
+
+    button {
       margin-bottom: 50px;
-      background-color: #fff;
-      border-radius: 50px;
-      color: #f98100;
-      border: 2px solid #f98100;
-      font: 700 15px 'Heebo', sans-serif;
-      padding: 10px 40px;
-      max-width: 100%;
-      -webkit-transition: all 0.3s; /* Safari */
-      transition: all 0.3s;
-      &.ready{
-        background-color: #f98100;
-        color: #fff;
-      }
     }
-    #date-range-container{
+
+    #date-range-container {
       width: 100%;
       border: none;
       background: none;
-      .date-picker-wrapper{
+
+      .date-picker-wrapper {
         border: none;
         background: none;
         padding: 0;
+
         .caption {
-            height: 60px;
-            .next:hover, .prev:hover{
-              background: transparent;
-              color: #79bd1a;
-            }
+          height: 60px;
+
+          .next:hover,
+          .prev:hover {
+            background: transparent;
+            color: #79bd1a;
+          }
         }
+
         .month-wrapper {
           border: none;
-          table {
-              width: 100%;
-              float: none;
-              margin: 0 auto;
-              border-top: 2px solid #e3e3e3;
-              th{
-                font: 400 15px 'Heebo', sans-serif;
-                color: #b5b5b5;
 
+          table {
+            width: 100%;
+            float: none;
+            margin: 0 auto;
+            border-top: 2px solid #e3e3e3;
+
+            th {
+              font: 400 15px 'Heebo', sans-serif;
+              color: #b5b5b5;
+            }
+
+            .week-name {
+              border-bottom: 2px solid #e3e3e3;
+              height: 30px;
+            }
+
+            .month-name {
+              font: 400 16px 'Heebo', sans-serif;
+              color: #555;
+            }
+
+            .day {
+              font: 400 15px 'Heebo', sans-serif;
+              color: #555;
+              padding: 12px 0;
+              min-width: 45px;
+              box-sizing: content-box;
+
+              &.checked,
+              &.hovering {
+                background-color: #79bd1a;
+                color: #fff;
               }
-              .week-name{
-                border-bottom: 2px solid #e3e3e3;
-                height: 30px;
-              }
-              .month-name{
-                font: 400 16px 'Heebo', sans-serif;
-                color: #555;
-              }
-              .day{
-                font: 400 15px 'Heebo', sans-serif;
-                color: #555;
-                padding: 12px 0;
-                min-width: 45px;
-                box-sizing: content-box;
-                &.checked, &.hovering{
-                  background-color: #79bd1a;
-                  color: #fff;
-                }
-              }
-              .first-date-selected{
-                background-color: #79bd1a !important;
-                border-radius: 50% 0 0 50%;
-              }
-              .last-date-selected{
-                border: 2px solid #79bd1a !important;
-                background-color: #fff !important;
-                color: #79bd1a !important;
-                border-radius: 50%;
-              }
-              .real-today{
-                background-color: #fff;
-              }
+            }
+
+            .first-date-selected {
+              background-color: #79bd1a !important;
+              border-radius: 50% 0 0 50%;
+            }
+
+            .last-date-selected {
+              border: 2px solid #79bd1a !important;
+              background-color: #fff !important;
+              color: #79bd1a !important;
+              border-radius: 50%;
+            }
+
+            .real-today {
+              background-color: #fff;
+            }
           }
         }
       }
     }
   }
-  h2{
+
+  h2 {
     font: 400 22px 'Montserrat', sans-serif;
     color: #000;
     text-align: center;
   }
 }
 
-footer{
+footer {
+  margin-top: 30px;
   text-align: center;
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
   font: 400 12px 'Heebo', sans-serif;
   color: #b5b5b5;
-  .social-links{
-    ul{
+
+  .social-links {
+    ul {
       list-style: none;
       margin: 0;
       padding: 0;
-      li{
+
+      li {
         display: inline-block;
-        img.svg{
+
+        img.svg {
           width: 30px;
           margin: 40px 20px;
-          path, circle{
-            fill:#F98100;
-            -webkit-transition: all 0.3s; /* Safari */
+
+          circle,
+          path {
+            fill: #F98100;
+            -webkit-transition: all 0.3s;
+            /* Safari */
             transition: all 0.3s;
           }
-          &:hover{
-            path, circle{
-                fill: #555;
-                -webkit-transition: all 0.3s; /* Safari */
-                transition: all 0.3s;
+
+          &:hover {
+            circle,
+            path {
+              fill: #555;
+              -webkit-transition: all 0.3s;
+              /* Safari */
+              transition: all 0.3s;
             }
           }
         }
       }
     }
   }
-  p{
+
+  p {
     margin: 0 0 40px;
   }
 }
 
+
+/* geral */
+
+.button-default{
+  background-color: #fff;
+  border-radius: 50px;
+  color: #f98100;
+  border: 2px solid #f98100;
+  font: 700 15px 'Heebo', sans-serif;
+  padding: 10px 40px;
+  max-width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #f98100;
+    color: #fff;
+    outline: none;
+  }
+}
+.button-primary{
+  background-color: #79bd1a;
+  border-radius: 50px;
+  color: #fff;
+  border: 2px solid #79bd1a;
+  font: 700 15px 'Heebo', sans-serif;
+  padding: 10px 40px;
+  max-width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #fff;
+    color: #79bd1a;
+    outline: none;
+  }
+}
 /* FOCO NO TRABALHO DONA HENDY.*/

@@ -25,7 +25,8 @@ $(function() {
     setValue: function(s, s1, s2) {
       $('#date-checkin').val(s1);
       $('#date-checkout').val(s2);
-      $('.form-search-hotel button').addClass('ready');
+      $("span.date-start").text(s1);
+      $("span.date-end").text(s2);
     }
   });
 
