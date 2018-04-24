@@ -42,10 +42,10 @@
           <div class="row">
             <div class="col-md-6">
               <label for="date-checkin">CHECK-IN</label>
-              <input type="text" name="date-checkin" id="date-checkin" placeholder="Choose a date">
+              <input type="text" name="date-checkin" id="date-checkin" placeholder="Choose a date" required disabled>
               <label for="date-checkout">CHECK-OUT</label>
-              <input type="text" name="date-checkout" id="date-checkout" placeholder="Choose a date">
-              <button class="button-primary">Search hotels</button>
+              <input type="text" name="date-checkout" id="date-checkout" placeholder="Choose a date" required disabled>
+              <button class="button-primary" id="search-hotel">Search hotels</button>
             </div>
             <div class="col-md-6">
               <div id="date-range-container"></div>
@@ -83,8 +83,8 @@
                   </div>
                   <div class="input-group">
                     <label>Stars</label>
-                    <label for="stars-1" class="filter-stars">
-                      <input type="checkbox" name="stars" id="stars-1">
+                    <label for="1" class="filter-stars">
+                      <input type="checkbox" name="stars" id="1" value="1">
                       <span class="checkmark"></span>
                       <img src="img/star-filled.svg" alt="star-filled" />
                       <img src="img/star-outline.svg" alt="star-outline" />
@@ -92,8 +92,8 @@
                       <img src="img/star-outline.svg" alt="star-outline" />
                       <img src="img/star-outline.svg" alt="star-outline" />
                     </label>
-                    <label for="stars-2" class="filter-stars">
-                      <input type="checkbox" name="stars" id="stars-2">
+                    <label for="2" class="filter-stars">
+                      <input type="checkbox" name="stars" id="2" value="2">
                       <span class="checkmark"></span>
                       <img src="img/star-filled.svg" alt="star-filled" />
                       <img src="img/star-filled.svg" alt="star-filled" />
@@ -101,8 +101,8 @@
                       <img src="img/star-outline.svg" alt="star-outline" />
                       <img src="img/star-outline.svg" alt="star-outline" />
                     </label>
-                    <label for="stars-3" class="filter-stars">
-                      <input type="checkbox" name="stars" id="stars-3">
+                    <label for="3" class="filter-stars">
+                      <input type="checkbox" name="stars" id="3" value="3">
                       <span class="checkmark"></span>
                       <img src="img/star-filled.svg" alt="star-filled" />
                       <img src="img/star-filled.svg" alt="star-filled" />
@@ -110,8 +110,8 @@
                       <img src="img/star-outline.svg" alt="star-outline" />
                       <img src="img/star-outline.svg" alt="star-outline" />
                     </label>
-                    <label for="stars-4" class="filter-stars">
-                      <input type="checkbox" name="stars" id="stars-4">
+                    <label for="4" class="filter-stars">
+                      <input type="checkbox" name="stars" id="4" value="4">
                       <span class="checkmark"></span>
                       <img src="img/star-filled.svg" alt="star-filled" />
                       <img src="img/star-filled.svg" alt="star-filled" />
@@ -119,8 +119,8 @@
                       <img src="img/star-filled.svg" alt="star-filled" />
                       <img src="img/star-outline.svg" alt="star-outline" />
                     </label>
-                    <label for="stars-5" class="filter-stars">
-                      <input type="checkbox" name="stars" id="stars-5">
+                    <label for="5" class="filter-stars">
+                      <input type="checkbox" name="stars" id="5" value="5">
                       <span class="checkmark"></span>
                       <img src="img/star-filled.svg" alt="star-filled" />
                       <img src="img/star-filled.svg" alt="star-filled" />
@@ -133,37 +133,7 @@
               </form>
           </div>
           <div class="col-md-9 col-xs-12">
-            <div class="list-result">
-              <div class="box-item col-md-offset-2">
-                <div class="col-md-2 col-xs-12">
-                  <div class="wrapper-img">
-                    <a href="#">
-                      <img src="img/hotel-example.jpg" alt="Hyatt Place Charlotte Airport/Lake Pointe">
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-7 col-sm-8 col-xs-12 border-right">
-                  <div class="stars">
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                    <img src="img/star-filled.svg" alt="star-filled" />
-                  </div>
-                  <h1 class="hotel-name"><a href="#">Hyatt Place Charlotte Airport/Lake Pointe</a></h1>
-                  <p class="description">This hotel is located 7 miles from downtown Charlotte and 5 miles from Charlotte Douglas International Airport.</p>
-                  <button class="book-now button-default">Book now</button>
-                  <button class="price-history button-primary">Price history</button>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-12 text-right">
-                <div class="values">
-                  <p class="title-sale">Total <b> 8 nights</b></p>
-                  <p class="value-sale">$670</p>
-                  <p class="title-normal">Per night</p>
-                  <p class="value-normal">$670</p>
-                </div>
-                </div>
-                <div class="clearfix"></div>
-              </div>
-            </div>
+            <div class="list-result"></div>
           </div>
         </div>
       </div>
