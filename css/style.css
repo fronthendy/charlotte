@@ -48,7 +48,7 @@ main {
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
-    padding: 100px 0 50px;
+    padding: 100px 0 150px;
     min-height: 100vh; }
     main section.hero .title {
       color: #fff; }
@@ -91,159 +91,161 @@ main {
           -webkit-transition: all 0.4s;
           /* Safari */
           transition: all 0.4s; }
-  main section.result h2 {
-    font: 22px 'Montserrat', sans-serif;
-    color: #000;
-    margin-bottom: 30px; }
-  main section.result form {
-    margin: 30px 0; }
-    main section.result form legend {
+  main section.result {
+    display: none; }
+    main section.result h2 {
       font: 22px 'Montserrat', sans-serif;
       color: #000;
-      border: none;
-      margin: 5px; }
-    main section.result form label,
-    main section.result form span {
-      font: 400 13px 'Heebo', sans-serif;
-      color: #b5b5b5;
-      margin: 5px; }
-    main section.result form input.range-price {
-      width: 100%;
-      border: none;
-      background: none;
-      font: 600 22px 'Heebo', sans-serif;
-      color: #f98100; }
-    main section.result form label.filter-stars {
-      display: block;
-      position: relative;
-      padding-left: 25px; }
-      main section.result form label.filter-stars input[type='checkbox'] {
-        display: none; }
-      main section.result form label.filter-stars input[type='checkbox']:checked ~ .checkmark {
-        opacity: 1;
-        transition: 0.1s ease; }
-      main section.result form label.filter-stars .checkmark {
-        opacity: 0;
-        position: absolute;
-        width: 7px;
-        height: 11px;
-        border-right: 3px solid #f98100;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(40deg);
+      margin-bottom: 30px; }
+    main section.result form {
+      margin: 30px 0; }
+      main section.result form legend {
+        font: 22px 'Montserrat', sans-serif;
+        color: #000;
+        border: none;
+        margin: 5px; }
+      main section.result form label,
+      main section.result form span {
+        font: 400 13px 'Heebo', sans-serif;
+        color: #b5b5b5;
+        margin: 5px; }
+      main section.result form input.range-price {
+        width: 100%;
+        border: none;
+        background: none;
+        font: 600 22px 'Heebo', sans-serif;
+        color: #f98100; }
+      main section.result form label.filter-stars {
+        display: block;
+        position: relative;
+        padding-left: 25px; }
+        main section.result form label.filter-stars input[type='checkbox'] {
+          display: none; }
+        main section.result form label.filter-stars input[type='checkbox']:checked ~ .checkmark {
+          opacity: 1;
+          transition: 0.1s ease; }
+        main section.result form label.filter-stars .checkmark {
+          opacity: 0;
+          position: absolute;
+          width: 7px;
+          height: 11px;
+          border-right: 3px solid #f98100;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(40deg);
+          top: 0;
+          left: 1px;
+          border-radius: 2px;
+          border-bottom: 3px solid #f98100; }
+        main section.result form label.filter-stars:before {
+          content: '';
+          position: absolute;
+          top: 2px;
+          left: 0;
+          width: 19px;
+          height: 19px;
+          border: 2px solid #ffbb72;
+          border-radius: 2px; }
+        main section.result form label.filter-stars img {
+          width: 20px;
+          margin: 3px; }
+      main section.result form .input-group {
+        width: 100%;
+        border-bottom: 1px solid #e3e3e3;
+        padding: 30px 0; }
+        main section.result form .input-group:last-child {
+          border: none; }
+      main section.result form .ui-state-default,
+      main section.result form .ui-widget-content .ui-state-default,
+      main section.result form .ui-widget-header .ui-state-default {
+        border: 4px solid #f88000;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 50%; }
+        main section.result form .ui-state-default:active, main section.result form .ui-state-default:focus, main section.result form .ui-state-default:hover,
+        main section.result form .ui-widget-content .ui-state-default:active,
+        main section.result form .ui-widget-content .ui-state-default:focus,
+        main section.result form .ui-widget-content .ui-state-default:hover,
+        main section.result form .ui-widget-header .ui-state-default:active,
+        main section.result form .ui-widget-header .ui-state-default:focus,
+        main section.result form .ui-widget-header .ui-state-default:hover {
+          outline: none; }
+        main section.result form .ui-state-default:hover,
+        main section.result form .ui-widget-content .ui-state-default:hover,
+        main section.result form .ui-widget-header .ui-state-default:hover {
+          background-color: #f88000; }
+      main section.result form .ui-slider-horizontal {
+        height: 0.3em;
+        vertical-align: middle;
+        border: none;
+        background-image: none;
+        background-color: #b5b5b5;
+        margin: 10px 0; }
+      main section.result form .ui-slider-horizontal .ui-slider-range {
+        background-image: none;
+        background-color: #f88000;
         top: 0;
-        left: 1px;
-        border-radius: 2px;
-        border-bottom: 3px solid #f98100; }
-      main section.result form label.filter-stars:before {
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 0;
-        width: 19px;
-        height: 19px;
-        border: 2px solid #ffbb72;
-        border-radius: 2px; }
-      main section.result form label.filter-stars img {
-        width: 20px;
-        margin: 3px; }
-    main section.result form .input-group {
-      width: 100%;
-      border-bottom: 1px solid #e3e3e3;
-      padding: 30px 0; }
-      main section.result form .input-group:last-child {
-        border: none; }
-    main section.result form .ui-state-default,
-    main section.result form .ui-widget-content .ui-state-default,
-    main section.result form .ui-widget-header .ui-state-default {
-      border: 4px solid #f88000;
+        height: 5px; }
+      main section.result form .ui-slider-horizontal .ui-slider-handle {
+        top: -.4em; }
+    main section.result .list-result .box-item {
+      margin-bottom: 60px;
+      padding: 40px 25px;
       background-color: #fff;
-      background-image: none;
-      border-radius: 50%; }
-      main section.result form .ui-state-default:active, main section.result form .ui-state-default:focus, main section.result form .ui-state-default:hover,
-      main section.result form .ui-widget-content .ui-state-default:active,
-      main section.result form .ui-widget-content .ui-state-default:focus,
-      main section.result form .ui-widget-content .ui-state-default:hover,
-      main section.result form .ui-widget-header .ui-state-default:active,
-      main section.result form .ui-widget-header .ui-state-default:focus,
-      main section.result form .ui-widget-header .ui-state-default:hover {
-        outline: none; }
-      main section.result form .ui-state-default:hover,
-      main section.result form .ui-widget-content .ui-state-default:hover,
-      main section.result form .ui-widget-header .ui-state-default:hover {
-        background-color: #f88000; }
-    main section.result form .ui-slider-horizontal {
-      height: 0.3em;
-      vertical-align: middle;
-      border: none;
-      background-image: none;
-      background-color: #b5b5b5;
-      margin: 10px 0; }
-    main section.result form .ui-slider-horizontal .ui-slider-range {
-      background-image: none;
-      background-color: #f88000;
-      top: 0;
-      height: 5px; }
-    main section.result form .ui-slider-horizontal .ui-slider-handle {
-      top: -.4em; }
-  main section.result .list-result .box-item {
-    margin-bottom: 60px;
-    padding: 40px 25px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.2); }
-    main section.result .list-result .box-item .wrapper-img {
-      min-width: 100%;
-      width: 230px;
-      border-radius: 5px;
-      box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.2);
-      float: right;
-      transition: transform .3s,-webkit-transform .3s; }
-      main section.result .list-result .box-item .wrapper-img img {
-        width: 100%; }
-      main section.result .list-result .box-item .wrapper-img:hover {
-        transform: scale(1.05); }
-    main section.result .list-result .box-item .stars img {
-      width: 12px;
-      display: inline-block; }
-    main section.result .list-result .box-item .hotel-name {
-      line-height: 21px; }
-      main section.result .list-result .box-item .hotel-name a {
-        font: 600 16px 'Heebo', sans-serif;
+      border-radius: 10px;
+      box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.2); }
+      main section.result .list-result .box-item .wrapper-img {
+        min-width: 100%;
+        width: 230px;
+        border-radius: 5px;
+        box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.2);
+        float: right;
+        transition: transform .3s,-webkit-transform .3s; }
+        main section.result .list-result .box-item .wrapper-img img {
+          width: 100%; }
+        main section.result .list-result .box-item .wrapper-img:hover {
+          transform: scale(1.05); }
+      main section.result .list-result .box-item .stars img {
+        width: 12px;
+        display: inline-block; }
+      main section.result .list-result .box-item .hotel-name {
+        line-height: 21px; }
+        main section.result .list-result .box-item .hotel-name a {
+          font: 600 16px 'Heebo', sans-serif;
+          color: #f98100;
+          text-transform: uppercase;
+          text-decoration: none; }
+      main section.result .list-result .box-item .description {
+        font: 400 15px 'Heebo', sans-serif;
+        color: #b5b5b5; }
+      main section.result .list-result .box-item .title-sale {
+        font: 300 16px 'Heebo', sans-serif;
+        color: #b2b0c0;
+        margin-bottom: 5px; }
+      main section.result .list-result .box-item .value-sale {
+        font: 700 30px 'Montserrat', sans-serif;
+        color: #79bd1a;
+        margin-bottom: 20px; }
+      main section.result .list-result .box-item .title-normal {
+        font: 300 14px 'Heebo', sans-serif;
+        color: #b2b0c0;
+        margin-bottom: 5px; }
+      main section.result .list-result .box-item .value-normal {
+        font: 700 20px 'Montserrat', sans-serif;
         color: #f98100;
-        text-transform: uppercase;
-        text-decoration: none; }
-    main section.result .list-result .box-item .description {
-      font: 400 15px 'Heebo', sans-serif;
-      color: #b5b5b5; }
-    main section.result .list-result .box-item .title-sale {
-      font: 300 16px 'Heebo', sans-serif;
-      color: #b2b0c0;
-      margin-bottom: 5px; }
-    main section.result .list-result .box-item .value-sale {
-      font: 700 30px 'Montserrat', sans-serif;
-      color: #79bd1a;
-      margin-bottom: 20px; }
-    main section.result .list-result .box-item .title-normal {
-      font: 300 14px 'Heebo', sans-serif;
-      color: #b2b0c0;
-      margin-bottom: 5px; }
-    main section.result .list-result .box-item .value-normal {
-      font: 700 20px 'Montserrat', sans-serif;
-      color: #f98100;
-      margin-bottom: 20px; }
-    main section.result .list-result .box-item button {
-      margin: 15px 20px 10px 0; }
-    main section.result .list-result .box-item .button-default {
-      border: 1px solid #f98100;
-      padding: 5px 30px; }
-    main section.result .list-result .box-item .button-primary {
-      border-width: 1px;
-      padding: 5px 30px; }
-    main section.result .list-result .box-item .border-right {
-      border-right: 1px solid #ccc; }
-    main section.result .list-result .box-item .values {
-      padding: 40px 0; }
+        margin-bottom: 20px; }
+      main section.result .list-result .box-item button {
+        margin: 15px 20px 10px 0; }
+      main section.result .list-result .box-item .button-default {
+        border: 1px solid #f98100;
+        padding: 5px 30px; }
+      main section.result .list-result .box-item .button-primary {
+        border-width: 1px;
+        padding: 5px 30px; }
+      main section.result .list-result .box-item .border-right {
+        border-right: 1px solid #ccc; }
+      main section.result .list-result .box-item .values {
+        padding: 40px 0; }
 
 .box-white {
   width: 830px;
@@ -265,7 +267,8 @@ main {
       font: 400 16px 'Heebo', sans-serif;
       color: #b5b5b5;
       border: none;
-      margin-bottom: 40px; }
+      margin-bottom: 40px;
+      background-color: #fff; }
       .box-white .form-search-hotel input::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
         color: #b5b5b5; }
@@ -379,6 +382,8 @@ footer {
   max-width: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
+  .button-default:focus {
+    outline: none; }
   .button-default:hover {
     background-color: #f98100;
     color: #fff;
@@ -394,6 +399,8 @@ footer {
   max-width: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
+  .button-primary:focus {
+    outline: none; }
   .button-primary:hover {
     background-color: #fff;
     color: #79bd1a;

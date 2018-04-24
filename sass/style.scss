@@ -66,7 +66,7 @@ main {
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
-    padding: 100px 0 50px;
+    padding: 100px 0 150px;
     min-height: 100vh;
 
     .title {
@@ -131,6 +131,7 @@ main {
   }
 
   section.result {
+    display: none;
     h2 {
       font: 22px 'Montserrat', sans-serif;
       color: #000;
@@ -365,7 +366,7 @@ main {
       color: #b5b5b5;
       border: none;
       margin-bottom: 40px;
-
+      background-color: #fff;
       &::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
         color: #b5b5b5;
@@ -543,7 +544,9 @@ footer {
   max-width: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-
+  &:focus{
+    outline: none;
+  }
   &:hover {
     background-color: #f98100;
     color: #fff;
@@ -560,7 +563,9 @@ footer {
   max-width: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-
+  &:focus{
+    outline: none;
+  }
   &:hover {
     background-color: #fff;
     color: #79bd1a;
