@@ -110,7 +110,7 @@ $(function() {
                         <div class='values'>
                           <div class="row">
                             <div class="col-xs-12 xxs-6">
-                            <p class='title-sale'>Total <b> 8 nights</b></p>
+                            <p class='title-sale'>Total <b> ${daysSelected} nights</b></p>
                             <p class='value-sale'>$${daysSelected*value.price}</p>
                             </div>
                             <div class="col-xs-12 xxs-6">
