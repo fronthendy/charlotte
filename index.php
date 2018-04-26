@@ -136,6 +136,9 @@
                         <img src="img/star-filled.svg" alt="star-filled" />
                       </label>
                     </div>
+                    <div class="clearfix">
+
+                    </div>
                   </div>
                 </fieldset>
               </form>
