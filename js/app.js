@@ -94,52 +94,113 @@ $(function() {
     });
   };
 
+  let priceHistoryChart = (idCanvas, history) => {
+    let canvas = document.getElementById(idCanvas);
+    canvas = canvas.getContext('2d');
+    let months = history.map((obj) => obj.month);
+    let price = history.map((obj) => obj.value);
+
+    let purpleOrangeGradient = canvas.createLinearGradient(0, 0, 0, 600);
+    purpleOrangeGradient.addColorStop(0, '#fbb366');
+    purpleOrangeGradient.addColorStop(1, '#f4a990');
+
+    let purpleOrangeGradientHover = canvas.createLinearGradient(0, 0, 0, 600);
+    purpleOrangeGradientHover.addColorStop(0, '#f98101');
+    purpleOrangeGradientHover.addColorStop(1, '#ef7140');
+
+    var myChart = new Chart(canvas, {
+        type: 'bar',
+        data: {
+            labels: months,
+            datasets: [{
+                data: price,
+                backgroundColor: purpleOrangeGradient,
+    						hoverBackgroundColor: purpleOrangeGradientHover
+            }]
+        },
+
+        options: {
+          legend: {
+            display: false
+          },
+          scales: {
+						xAxes: [{
+							gridLines: {
+                display: false
+              }
+						}],
+						yAxes: [{
+              display: false,
+              gridLines: {
+                display: false
+              }
+						}]
+					},
+          tooltips: {
+              callbacks: {
+                  label: function(tooltipItem, data) {
+                      return "$"+tooltipItem.yLabel;
+                  }
+              }
+          }
+
+        }
+    });
+  };
+
   let listResult = (data) => {
     $('.list-result').empty();
     if(data.length > 0){
-    $.each(data, function(key, value) {
-      let boxItem = `<div class='box-item col-md-offset-2'>
-                      <div class='col-md-2 col-sm-8 col-xs-7 xxs-12 pull-left'>
-                          <div class='wrapper-img'>
-                            <a href='#'>
-                              <img src='${value.image}' alt='${value.name}'>
-                            </a>
-                          </div>
-                        </div>
-                        <div class='col-md-3 col-sm-4 col-xs-5 xxs-12 text-right pull-right'>
-                        <div class='values'>
-                          <div class="row">
-                            <div class="col-xs-12 xxs-6">
-                            <p class='title-sale'>Total <b> ${daysSelected} nights</b></p>
-                            <p class='value-sale'>$${daysSelected*value.price}</p>
-                            </div>
-                            <div class="col-xs-12 xxs-6">
-                            <p class='title-normal'>Per night</p>
-                            <p class='value-normal'>$${value.price}</p>
+      $.each(data, function(key, value) {
+
+        let boxItem = `<div class='box-item col-md-offset-2' id="${key}">
+                        <div class='col-md-2 col-sm-8 col-xs-7 xxs-12 pull-left'>
+                            <div class='wrapper-img'>
+                              <a href='#'>
+                                <img src='${value.image}' alt='${value.name}'>
+                              </a>
                             </div>
                           </div>
-                        </div>
-                        </div>
-                        <div class='col-md-7 col-sm-12 col-xs-12 border-rightpull-right'>
-                          <div class='stars'>
-                            ${rateHtml.repeat(value.rate)}
+                          <div class='col-md-3 col-sm-4 col-xs-5 xxs-12 text-right pull-right'>
+                          <div class='values'>
+                            <div class="row">
+                              <div class="col-xs-12 xxs-6">
+                              <p class='title-sale'>Total <b> ${daysSelected} nights</b></p>
+                              <p class='value-sale'>$${(daysSelected*value.price).toFixed(1)}</p>
+                              </div>
+                              <div class="col-xs-12 xxs-6">
+                              <p class='title-normal'>Per night</p>
+                              <p class='value-normal'>$${value.price}</p>
+                              </div>
+                            </div>
                           </div>
-                          <h1 class='hotel-name'><a href='#'>${value.name}</a></h1>
-                          <p class='description'>${value.description}</p>
-                          <button class='book-now button-default'>Book now</button>
-                          <button class='price-history button-primary'>Price history</button>
-                        </div>
-                      <div class='clearfix'></div>
-                    </div>`;
-      $('.list-result').append(boxItem);
-    });
-  }else{
-    $('.list-result').append(`<div class="alert text-center" role="alert">Ops, did not match any hotel!</div>`);
-  }
+                          </div>
+                          <div class='col-md-7 col-sm-12 col-xs-12 border-rightpull-right'>
+                            <div class='stars'>
+                              ${rateHtml.repeat(value.rate)}
+                            </div>
+                            <h1 class='hotel-name'><a href='#'>${value.name}</a></h1>
+                            <p class='description'>${value.description}</p>
+                            <button class='book-now button-default'>Book now</button>
+                            <button class='price-history button-primary'  data-toggle="collapse" data-target="#history-${key}">Price history</button>
+                          </div>
+                          <div class="col-xs-12 col-md-offset-2 col-md-10 collapse" id="history-${key}">
+                              <p class="canvas-title">Price history for 2017</p>
+                                <canvas id="chart-${key}" width="100%" height="30"></canvas>
+                          </div>
+                        <div class='clearfix'></div>
+                      </div>`;
+        $('.list-result').append(boxItem);
+              priceHistoryChart("chart-"+key, value.price_history);
+      });
+    }else {
+      $('.list-result').append(`<div class="alert text-center" role="alert">Ops, did not match any hotel!</div>`);
+    }
   };
 
   $(".arrow-collapse").on('click', function(e) {
     e.preventDefault();
   });
+
 
 });

@@ -279,6 +279,11 @@ section.result {
       border-right: 1px solid #ccc; }
     section.result .list-result .box-item .values {
       padding: 40px 0; }
+    section.result .list-result .box-item .canvas-title {
+      font: 700 16px 'Heebo', sans-serif;
+      text-transform: uppercase;
+      color: #f98100;
+      margin: 20px 0; }
 
 .box-white {
   width: 830px;
