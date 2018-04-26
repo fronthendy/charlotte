@@ -136,7 +136,12 @@ section.hero {
 
 section.result {
   display: none;
-
+  .alert{
+    font-size: 2em;
+    color: #f98100;
+    font-family: 'Heebo', sans-serif;
+    padding: 30px;
+  }
   h2 {
     font: 22px 'Montserrat', sans-serif;
     color: #000;

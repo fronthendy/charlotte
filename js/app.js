@@ -1,5 +1,8 @@
 $(function() {
   $('.title h1').addClass('ready');
+  let minPrice = 0;
+  let maxPrice = 600;
+  let rateSelected = ["1", "2", "3", "4", "5"];
 
   $.dateRangePickerLanguages['custom'] = {
     'week-1': 'M',
@@ -38,7 +41,9 @@ $(function() {
       $('#range-price-max').val('$' + ui.values[1]);
     },
     stop: function(event, ui) {
-      filterRange(ui.values[0], ui.values[1]);
+      minPrice = ui.values[0];
+      maxPrice = ui.values[1];
+      filterHotels(minPrice, maxPrice, rateSelected);
     }
   });
 
@@ -61,8 +66,6 @@ $(function() {
         }
       });
     }
-
-
   });
 
   $("input[name='stars']").change(function() {
@@ -70,27 +73,32 @@ $(function() {
     $("input[name='stars']:checked").each(function() {
       rateSelected.push($(this).val());
     });
-    $.ajax({
-      url: 'hotels.json',
-      success: function(data) {
-        let filtered = data.hotels.filter((obj) => rateSelected.includes(String(obj.rate)));
-        listResult(filtered);
-      }
-    });
+    filterHotels(minPrice, maxPrice, rateSelected);
   });
 
-  let filterRange = (min, max) => {
+  let filterHotels = (min, max, rateSelected) => {
     $.ajax({
       url: 'hotels.json',
       success: function(data) {
-        let filtered = data.hotels.filter((obj) => obj.price >= min && obj.price <= max);
+        let filtered = data.hotels.filter((obj) => obj.price >= min && obj.price <= max && rateSelected.includes(String(obj.rate)));
         listResult(filtered);
       }
     });
   };
 
+  // let filterRange = (min, max) => {
+  //   $.ajax({
+  //     url: 'hotels.json',
+  //     success: function(data) {
+  //       let filtered = data.hotels.filter((obj) => obj.price >= min && obj.price <= max);
+  //       listResult(filtered);
+  //     }
+  //   });
+  // };
+
   let listResult = (data) => {
     $('.list-result').empty();
+    if(data.length > 0){
     $.each(data, function(key, value) {
       let boxItem = `<div class='box-item col-md-offset-2'>
                       <div class='col-md-2 col-sm-8 col-xs-7 xxs-12 pull-left'>
@@ -127,8 +135,11 @@ $(function() {
                     </div>`;
       $('.list-result').append(boxItem);
     });
+  }else{
+    $('.list-result').append(`<div class="alert text-center" role="alert">Ops, did not match any hotel!</div>`);
+  }
   };
-  
+
   $(".arrow-collapse").on('click', function(e) {
     e.preventDefault();
   });
