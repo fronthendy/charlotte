@@ -53,11 +53,6 @@ $(function() {
     }
   });
 
-  $(".ui-slider-handle").draggable({
-      axis: "x",
-      containment: "parent"
-  });
-  
   $('#range-price-min').val('$' + $('#slider-range').slider('values', 0));
   $('#range-price-max').val('$' + $('#slider-range').slider('values', 1));
 
@@ -77,8 +72,7 @@ $(function() {
         }
       });
     }
-    daysSelected = Math.round(Math.abs((dateCheckout.getTime() - dateCheckin.getTime())/(24*60*60*1000)))
-    console.log(daysSelected);
+    daysSelected = Math.round(Math.abs((dateCheckout.getTime() - dateCheckin.getTime())/(24*60*60*1000)));
   });
 
   $("input[name='stars']").change(function() {

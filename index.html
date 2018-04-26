@@ -179,6 +179,7 @@
   <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script src="js/jquery.daterangepicker.min.js"></script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <script src="js/app.js"></script>
 </body>
 
