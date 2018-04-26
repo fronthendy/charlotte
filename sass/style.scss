@@ -193,7 +193,7 @@ section.result {
       display: block;
       position: relative;
       padding-left: 25px;
-
+      cursor: pointer;
       input[type='checkbox'] {
         display: none;
       }
@@ -282,6 +282,17 @@ section.result {
 
     .ui-slider-horizontal .ui-slider-handle {
       top: -.4em;
+      cursor: url('../img/grab.png'), auto;
+      cursor: move;
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      &:active {
+          cursor: url('../img/grabbing.png'), auto;
+          cursor: grabbing;
+          cursor: -moz-grabbing;
+          cursor: -webkit-grabbing;
+      }
     }
   }
 
@@ -506,6 +517,9 @@ section.result {
               background-color: #fff !important;
               color: #79bd1a !important;
               border-radius: 50%;
+              border-top-left-radius: 0;
+              padding: 10px 0;
+              border-bottom-left-radius: 0;
             }
 
             .real-today {

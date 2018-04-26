@@ -1,8 +1,12 @@
 $(function() {
   $('.title h1').addClass('ready');
+
   let minPrice = 0;
   let maxPrice = 600;
   let rateSelected = ["1", "2", "3", "4", "5"];
+  let dateCheckin;
+  let dateCheckout;
+  let daysSelected;
 
   $.dateRangePickerLanguages['custom'] = {
     'week-1': 'M',
@@ -28,6 +32,8 @@ $(function() {
       $('#date-checkout').val(s2);
       $('span.date-start').text(s1);
       $('span.date-end').text(s2);
+      dateCheckin = new Date(s1+"T00:00:00");
+      dateCheckout = new Date(s2+"T00:00:00");;
     }
   });
 
@@ -66,6 +72,8 @@ $(function() {
         }
       });
     }
+    daysSelected = Math.round(Math.abs((dateCheckout.getTime() - dateCheckin.getTime())/(24*60*60*1000)))
+    console.log(daysSelected);
   });
 
   $("input[name='stars']").change(function() {
@@ -86,16 +94,6 @@ $(function() {
     });
   };
 
-  // let filterRange = (min, max) => {
-  //   $.ajax({
-  //     url: 'hotels.json',
-  //     success: function(data) {
-  //       let filtered = data.hotels.filter((obj) => obj.price >= min && obj.price <= max);
-  //       listResult(filtered);
-  //     }
-  //   });
-  // };
-
   let listResult = (data) => {
     $('.list-result').empty();
     if(data.length > 0){
@@ -113,7 +111,7 @@ $(function() {
                           <div class="row">
                             <div class="col-xs-12 xxs-6">
                             <p class='title-sale'>Total <b> 8 nights</b></p>
-                            <p class='value-sale'>$670</p>
+                            <p class='value-sale'>$${daysSelected*value.price}</p>
                             </div>
                             <div class="col-xs-12 xxs-6">
                             <p class='title-normal'>Per night</p>

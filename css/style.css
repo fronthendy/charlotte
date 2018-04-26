@@ -140,7 +140,8 @@ section.result {
     section.result form label.filter-stars {
       display: block;
       position: relative;
-      padding-left: 25px; }
+      padding-left: 25px;
+      cursor: pointer; }
       section.result form label.filter-stars input[type='checkbox'] {
         display: none; }
       section.result form label.filter-stars input[type='checkbox']:checked ~ .checkmark {
@@ -209,7 +210,17 @@ section.result {
       top: 0;
       height: 5px; }
     section.result form .ui-slider-horizontal .ui-slider-handle {
-      top: -.4em; }
+      top: -.4em;
+      cursor: url("../img/grab.png"), auto;
+      cursor: move;
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab; }
+      section.result form .ui-slider-horizontal .ui-slider-handle:active {
+        cursor: url("../img/grabbing.png"), auto;
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing; }
   section.result .list-result .box-item {
     margin-bottom: 60px;
     padding: 40px 25px;
@@ -355,7 +366,10 @@ section.result {
               border: 2px solid #79bd1a !important;
               background-color: #fff !important;
               color: #79bd1a !important;
-              border-radius: 50%; }
+              border-radius: 50%;
+              border-top-left-radius: 0;
+              padding: 10px 0;
+              border-bottom-left-radius: 0; }
             .box-white .form-search-hotel #date-range-container .date-picker-wrapper .month-wrapper table .real-today {
               background-color: #fff; }
   .box-white h2 {

@@ -69,28 +69,28 @@
           </div>
           <aside class="col-md-3 col-sm-4 col-xs-12">
             <form id="search-filter">
-                <fieldset>
-                  <legend>Filters <button class="visible-xs pull-right arrow-collapse" data-toggle="collapse" data-target="#filter-body"></button></legend>
-                  <div class="collapse in" id="filter-body">
-                    <div class="input-group col-xs-12 col-sm-6">
-                      <label>Price Range per <b>night</b></label>
-                      <div class="col-xs-12">
-                        <div id="slider-range"></div>
+              <fieldset>
+                <legend>Filters <button class="visible-xs pull-right arrow-collapse" data-toggle="collapse" data-target="#filter-body"></button></legend>
+                <div class="collapse in" id="filter-body">
+                  <div class="input-group col-xs-12 col-sm-6">
+                    <label>Price Range per <b>night</b></label>
+                    <div class="col-xs-12">
+                      <div id="slider-range"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-6 text-left">
+                        <label class="pull-left">Min</label>
+                        <input type="text" id="range-price-min" class="range-price pull-left text-left" name="range-price-min" disabled>
                       </div>
-                      <div class="row">
-                        <div class="col-xs-6 text-left">
-                          <label class="pull-left">Min</label>
-                          <input type="text" id="range-price-min" class="range-price pull-left text-left" name="range-price-min" disabled>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                          <label class="pull-right">Max</label>
-                          <input type="text" id="range-price-max" class="range-price pull-right text-right" name="range-price-max" disabled>
-                        </div>
+                      <div class="col-xs-6 text-right">
+                        <label class="pull-right">Max</label>
+                        <input type="text" id="range-price-max" class="range-price pull-right text-right" name="range-price-max" disabled>
                       </div>
                     </div>
-                    <div class="input-group  col-xs-12 col-sm-6">
-                      <label>Stars</label>
-                      <label for="1" class="filter-stars">
+                  </div>
+                  <div class="input-group  col-xs-12 col-sm-6">
+                    <label>Stars</label>
+                    <label for="1" class="filter-stars">
                         <input type="checkbox" checked name="stars" id="1" value="1">
                         <span class="checkmark"></span>
                         <img src="img/star-filled.svg" alt="star-filled" />
@@ -99,7 +99,7 @@
                         <img src="img/star-outline.svg" alt="star-outline" />
                         <img src="img/star-outline.svg" alt="star-outline" />
                       </label>
-                      <label for="2" class="filter-stars">
+                    <label for="2" class="filter-stars">
                         <input type="checkbox" checked name="stars" id="2" value="2">
                         <span class="checkmark"></span>
                         <img src="img/star-filled.svg" alt="star-filled" />
@@ -108,7 +108,7 @@
                         <img src="img/star-outline.svg" alt="star-outline" />
                         <img src="img/star-outline.svg" alt="star-outline" />
                       </label>
-                      <label for="3" class="filter-stars">
+                    <label for="3" class="filter-stars">
                         <input type="checkbox" checked name="stars" id="3" value="3">
                         <span class="checkmark"></span>
                         <img src="img/star-filled.svg" alt="star-filled" />
@@ -117,7 +117,7 @@
                         <img src="img/star-outline.svg" alt="star-outline" />
                         <img src="img/star-outline.svg" alt="star-outline" />
                       </label>
-                      <label for="4" class="filter-stars">
+                    <label for="4" class="filter-stars">
                         <input type="checkbox" checked name="stars" id="4" value="4">
                         <span class="checkmark"></span>
                         <img src="img/star-filled.svg" alt="star-filled" />
@@ -126,7 +126,7 @@
                         <img src="img/star-filled.svg" alt="star-filled" />
                         <img src="img/star-outline.svg" alt="star-outline" />
                       </label>
-                      <label for="5" class="filter-stars">
+                    <label for="5" class="filter-stars">
                         <input type="checkbox" checked name="stars" id="5" value="5">
                         <span class="checkmark"></span>
                         <img src="img/star-filled.svg" alt="star-filled" />
@@ -135,13 +135,13 @@
                         <img src="img/star-filled.svg" alt="star-filled" />
                         <img src="img/star-filled.svg" alt="star-filled" />
                       </label>
-                    </div>
-                    <div class="clearfix">
-
-                    </div>
                   </div>
-                </fieldset>
-              </form>
+                  <div class="clearfix">
+
+                  </div>
+                </div>
+              </fieldset>
+            </form>
           </aside>
           <div class="col-md-9 col-sm-8 col-xs-12">
             <div class="list-result"></div>
