@@ -77,7 +77,7 @@ $(function() {
   });
 
   $("input[name='stars']").change(function() {
-    let rateSelected = [];
+    rateSelected = [];
     $("input[name='stars']:checked").each(function() {
       rateSelected.push($(this).val());
     });
