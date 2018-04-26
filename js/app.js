@@ -38,7 +38,7 @@ $(function() {
       $('#range-price-max').val('$' + ui.values[1]);
     },
     stop: function(event, ui) {
-      filterRange(ui.values[0],  ui.values[1]);
+      filterRange(ui.values[0], ui.values[1]);
     }
   });
 
@@ -49,18 +49,23 @@ $(function() {
 
   $('#search-hotel').click(function(event) {
     event.preventDefault();
-    if($("input#date-checkin").val() != '' && $("input#date-checkout").val() != ''){
+    if ($("input#date-checkin").val() != '' && $("input#date-checkout").val() != '') {
       $("section.result").show();
       $.ajax({
         url: 'hotels.json',
         success: function(data) {
           listResult(data.hotels);
+          $('html, body').animate({
+            scrollTop: ($('#wrapper-result').offset().top)
+          }, 500);
         }
       });
     }
+
+
   });
 
-  $("input[name='stars']").change(function(){
+  $("input[name='stars']").change(function() {
     let rateSelected = [];
     $("input[name='stars']:checked").each(function() {
       rateSelected.push($(this).val());
@@ -87,35 +92,45 @@ $(function() {
   let listResult = (data) => {
     $('.list-result').empty();
     $.each(data, function(key, value) {
-      let boxItem = "<div class='box-item col-md-offset-2'>" +
-        "<div class='col-md-2 col-xs-12'>" +
-        "<div class='wrapper-img'>" +
-        "<a href='#'>" +
-        "<img src='" + value.image + "' alt='" + value.name + "'>" +
-        "</a>" +
-        "</div>" +
-        "</div>" +
-        "<div class='col-md-7 col-sm-8 col-xs-12 border-right'>" +
-        "<div class='stars'>" +
-        rateHtml.repeat(value.rate) +
-        "</div>" +
-        "<h1 class='hotel-name'><a href='#'>" + value.name + "</a></h1>" +
-        "<p class='description'>" + value.description + ".</p>" +
-        "<button class='book-now button-default'>Book now</button>" +
-        "<button class='price-history button-primary'>Price history</button>" +
-        "</div>" +
-        "<div class='col-md-3 col-sm-4 col-xs-12 text-right'>" +
-        "<div class='values'>" +
-        "<p class='title-sale'>Total <b> 8 nights</b></p>" +
-        "<p class='value-sale'>$670</p>" +
-        "<p class='title-normal'>Per night</p>" +
-        "<p class='value-normal'>$" + value.price + "</p>" +
-        "</div>" +
-        "</div>" +
-        "<div class='clearfix'></div>" +
-        "</div>";
+      let boxItem = `<div class='box-item col-md-offset-2'>
+                      <div class='col-md-2 col-sm-8 col-xs-7 xxs-12 pull-left'>
+                          <div class='wrapper-img'>
+                            <a href='#'>
+                              <img src='${value.image}' alt='${value.name}'>
+                            </a>
+                          </div>
+                        </div>
+                        <div class='col-md-3 col-sm-4 col-xs-5 xxs-12 text-right pull-right'>
+                        <div class='values'>
+                          <div class="row">
+                            <div class="col-xs-12 xxs-6">
+                            <p class='title-sale'>Total <b> 8 nights</b></p>
+                            <p class='value-sale'>$670</p>
+                            </div>
+                            <div class="col-xs-12 xxs-6">
+                            <p class='title-normal'>Per night</p>
+                            <p class='value-normal'>$${value.price}</p>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                        <div class='col-md-7 col-sm-12 col-xs-12 border-rightpull-right'>
+                          <div class='stars'>
+                            ${rateHtml.repeat(value.rate)}
+                          </div>
+                          <h1 class='hotel-name'><a href='#'>${value.name}</a></h1>
+                          <p class='description'>${value.description}</p>
+                          <button class='book-now button-default'>Book now</button>
+                          <button class='price-history button-primary'>Price history</button>
+                        </div>
+                      <div class='clearfix'></div>
+                    </div>`;
       $('.list-result').append(boxItem);
     });
   };
+  
+  $(".arrow-collapse").on('click', function(e) {
+    e.preventDefault();
+  });
 
 });

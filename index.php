@@ -40,99 +40,107 @@
         <h2>Select the dates to stay in Charlotte</h2>
         <form class="form-search-hotel">
           <div class="row">
-            <div class="col-md-6">
-              <label for="date-checkin">CHECK-IN</label>
-              <input type="text" name="date-checkin" id="date-checkin" placeholder="Choose a date" required disabled>
-              <label for="date-checkout">CHECK-OUT</label>
-              <input type="text" name="date-checkout" id="date-checkout" placeholder="Choose a date" required disabled>
-              <button class="button-primary" id="search-hotel">Search hotels</button>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-7 col-xs-12 pull-right">
               <div id="date-range-container"></div>
+            </div>
+            <div class="col-md-6 col-sm-5 col-xs-12 pull-right">
+              <div class="col-md-12 col-sm-12 col-xs-6">
+                <label for="date-checkin">CHECK-IN</label>
+                <input type="text" name="date-checkin" id="date-checkin" placeholder="Choose a date" required disabled>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-6">
+                <label for="date-checkout">CHECK-OUT</label>
+                <input type="text" name="date-checkout" id="date-checkout" placeholder="Choose a date" required disabled>
+              </div>
+              <div class="col-xs-12">
+                <button class="button-primary" id="search-hotel">Search hotels</button>
+              </div>
             </div>
           </div>
           <div class="clearfix"></div>
         </form>
       </div>
     </section>
-    <section class="result">
+    <section class="result" id="wrapper-result">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center">
             <h2>Best choices between <span class="date-start"></span> and <span class="date-end"></span></h2>
           </div>
-          <div class="col-md-3 col-xs-12">
+          <aside class="col-md-3 col-sm-4 col-xs-12">
             <form id="search-filter">
                 <fieldset>
-                  <legend>Filters</legend>
-                  <div class="input-group">
-                    <label>Price Range per <b>night</b></label>
-                    <div class="col-xs-12">
-                      <div id="slider-range"></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-xs-6 text-left">
-                        <label class="pull-left">Min</label>
-                        <input type="text" id="range-price-min" class="range-price pull-left text-left" name="range-price-min" disabled>
+                  <legend>Filters <button class="visible-xs pull-right arrow-collapse" data-toggle="collapse" data-target="#filter-body"></button></legend>
+                  <div class="collapse in" id="filter-body">
+                    <div class="input-group col-xs-12 col-sm-6">
+                      <label>Price Range per <b>night</b></label>
+                      <div class="col-xs-12">
+                        <div id="slider-range"></div>
                       </div>
-                      <div class="col-xs-6 text-right">
-                        <label class="pull-right">Max</label>
-                        <input type="text" id="range-price-max" class="range-price pull-right text-right" name="range-price-max" disabled>
+                      <div class="row">
+                        <div class="col-xs-6 text-left">
+                          <label class="pull-left">Min</label>
+                          <input type="text" id="range-price-min" class="range-price pull-left text-left" name="range-price-min" disabled>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                          <label class="pull-right">Max</label>
+                          <input type="text" id="range-price-max" class="range-price pull-right text-right" name="range-price-max" disabled>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="input-group">
-                    <label>Stars</label>
-                    <label for="1" class="filter-stars">
-                      <input type="checkbox" name="stars" id="1" value="1">
-                      <span class="checkmark"></span>
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                    </label>
-                    <label for="2" class="filter-stars">
-                      <input type="checkbox" name="stars" id="2" value="2">
-                      <span class="checkmark"></span>
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                    </label>
-                    <label for="3" class="filter-stars">
-                      <input type="checkbox" name="stars" id="3" value="3">
-                      <span class="checkmark"></span>
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                    </label>
-                    <label for="4" class="filter-stars">
-                      <input type="checkbox" name="stars" id="4" value="4">
-                      <span class="checkmark"></span>
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-outline.svg" alt="star-outline" />
-                    </label>
-                    <label for="5" class="filter-stars">
-                      <input type="checkbox" name="stars" id="5" value="5">
-                      <span class="checkmark"></span>
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                      <img src="img/star-filled.svg" alt="star-filled" />
-                    </label>
+                    <div class="input-group  col-xs-12 col-sm-6">
+                      <label>Stars</label>
+                      <label for="1" class="filter-stars">
+                        <input type="checkbox" name="stars" id="1" value="1">
+                        <span class="checkmark"></span>
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                      </label>
+                      <label for="2" class="filter-stars">
+                        <input type="checkbox" name="stars" id="2" value="2">
+                        <span class="checkmark"></span>
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                      </label>
+                      <label for="3" class="filter-stars">
+                        <input type="checkbox" name="stars" id="3" value="3">
+                        <span class="checkmark"></span>
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                      </label>
+                      <label for="4" class="filter-stars">
+                        <input type="checkbox" name="stars" id="4" value="4">
+                        <span class="checkmark"></span>
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-outline.svg" alt="star-outline" />
+                      </label>
+                      <label for="5" class="filter-stars">
+                        <input type="checkbox" name="stars" id="5" value="5">
+                        <span class="checkmark"></span>
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                        <img src="img/star-filled.svg" alt="star-filled" />
+                      </label>
+                    </div>
                   </div>
                 </fieldset>
               </form>
-          </div>
-          <div class="col-md-9 col-xs-12">
+          </aside>
+          <div class="col-md-9 col-sm-8 col-xs-12">
             <div class="list-result"></div>
           </div>
         </div>
